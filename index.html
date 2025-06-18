@@ -3,81 +3,691 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
+    <title>Advanced Web Project</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
+    <div class="loading-screen" id="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <header id="main-header">
+        <div class="logo">
+            <h1>Advanced<span>Web</span></h1>
+        </div>
+        <nav id="main-nav">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
+        <div class="header-controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            <button id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <h2>Hello, World!</h2>
-            <p>Welcome to my simple website created with HTML, CSS, and JavaScript.</p>
-            <button id="theme-toggle">Toggle Dark Mode</button>
+            <div class="hero-content">
+                <h2 class="animated-text">Welcome to Advanced Web Project</h2>
+                <p>Experience the power of modern web technologies.</p>
+                <div class="cta-buttons">
+                    <button id="learn-more-btn" class="primary-btn">Learn More</button>
+                    <button id="get-started-btn" class="secondary-btn">Get Started</button>
+                </div>
+            </div>
+            <div class="image-slider">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="https://source.unsplash.com/random/1200x600/?technology" alt="Technology">
+                        <div class="slide-caption">Innovative Technology</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://source.unsplash.com/random/1200x600/?design" alt="Design">
+                        <div class="slide-caption">Beautiful Design</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://source.unsplash.com/random/1200x600/?code" alt="Code">
+                        <div class="slide-caption">Clean Code</div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                    <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
         </section>
 
         <section id="about">
-            <h2>About</h2>
-            <p>This is a simple website showcasing basic web development skills.</p>
-            <p>Click the counter button below to see JavaScript in action:</p>
-            <div class="counter-container">
-                <span id="counter">0</span>
-                <button id="counter-button">Increment</button>
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Learn about our journey and expertise</p>
+            </div>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://source.unsplash.com/random/600x400/?team" alt="Our Team">
+                </div>
+                <div class="about-content">
+                    <h3>Our Story</h3>
+                    <p>We are a team of dedicated professionals passionate about creating exceptional web experiences. With years of expertise in design and development, we strive to deliver innovative solutions.</p>
+                    
+                    <div class="tabs">
+                        <div class="tab-headers">
+                            <button class="tab-btn active" data-tab="mission">Our Mission</button>
+                            <button class="tab-btn" data-tab="vision">Our Vision</button>
+                            <button class="tab-btn" data-tab="values">Our Values</button>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="mission">
+                                <p>Our mission is to create innovative web solutions that solve real-world problems and exceed client expectations.</p>
+                            </div>
+                            <div class="tab-pane" id="vision">
+                                <p>We envision a digital landscape where technology seamlessly enhances human experiences through intuitive and accessible design.</p>
+                            </div>
+                            <div class="tab-pane" id="values">
+                                <ul>
+                                    <li>Innovation in everything we do</li>
+                                    <li>Commitment to quality and excellence</li>
+                                    <li>User-centered approach to design</li>
+                                    <li>Ethical and sustainable practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills-section">
+                <h3>Our Expertise</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <div class="skill-info">
+                            <span>HTML5/CSS3</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-info">
+                            <span>Responsive Design</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-info">
+                            <span>UX/UI Design</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="counter-section">
+                <div class="counter-container">
+                    <div class="counter-item">
+                        <i class="fas fa-users"></i>
+                        <div class="counter-value" data-target="250">0</div>
+                        <h4>Clients</h4>
+                    </div>
+                    <div class="counter-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <div class="counter-value" data-target="650">0</div>
+                        <h4>Projects</h4>
+                    </div>
+                    <div class="counter-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="counter-value" data-target="5280">0</div>
+                        <h4>Hours</h4>
+                    </div>
+                    <div class="counter-item">
+                        <i class="fas fa-award"></i>
+                        <div class="counter-value" data-target="35">0</div>
+                        <h4>Awards</h4>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="services">
-            <h2>Services</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Web Design</h3>
-                    <p>Beautiful and responsive websites.</p>
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions for your digital needs</p>
+            </div>
+            <div class="services-container">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom web applications and responsive websites built with modern technologies.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Responsive Design</li>
+                            <li>Frontend Development</li>
+                            <li>Backend Development</li>
+                            <li>API Integration</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Development</h3>
-                    <p>Custom web applications.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered design solutions that enhance user experience and satisfaction.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>User Research</li>
+                            <li>Wireframing</li>
+                            <li>Prototyping</li>
+                            <li>Usability Testing</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>SEO</h3>
-                    <p>Optimize your online presence.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>iOS Development</li>
+                            <li>Android Development</li>
+                            <li>Hybrid Apps</li>
+                            <li>App Store Optimization</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Services</h3>
+                    <p>Optimization strategies to improve visibility and ranking in search engines.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Keyword Research</li>
+                            <li>On-page Optimization</li>
+                            <li>Link Building</li>
+                            <li>Performance Tracking</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-section">
+                <h3>Pricing Plans</h3>
+                <div class="pricing-container">
+                    <div class="pricing-card" data-aos="zoom-in">
+                        <div class="pricing-header">
+                            <h4>Basic</h4>
+                            <div class="price">$99<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 5 Pages Website</li>
+                                <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                                <li><i class="fas fa-check"></i> Basic SEO</li>
+                                <li><i class="fas fa-times"></i> Custom Design</li>
+                                <li><i class="fas fa-times"></i> E-commerce Features</li>
+                            </ul>
+                        </div>
+                        <button class="pricing-btn">Select Plan</button>
+                    </div>
+                    <div class="pricing-card featured" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="ribbon">Popular</div>
+                        <div class="pricing-header">
+                            <h4>Professional</h4>
+                            <div class="price">$199<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 10 Pages Website</li>
+                                <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO</li>
+                                <li><i class="fas fa-check"></i> Custom Design</li>
+                                <li><i class="fas fa-times"></i> E-commerce Features</li>
+                            </ul>
+                        </div>
+                        <button class="pricing-btn">Select Plan</button>
+                    </div>
+                    <div class="pricing-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="pricing-header">
+                            <h4>Enterprise</h4>
+                            <div class="price">$299<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 20 Pages Website</li>
+                                <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO</li>
+                                <li><i class="fas fa-check"></i> Custom Design</li>
+                                <li><i class="fas fa-check"></i> E-commerce Features</li>
+                            </ul>
+                        </div>
+                        <button class="pricing-btn">Select Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="section-header">
+                <h2>Our Portfolio</h2>
+                <p>Showcasing our latest and greatest work</p>
+            </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/600x400/?website" alt="Web Project">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4>E-commerce Website</h4>
+                                <p>Web Development</p>
+                                <button class="portfolio-btn" data-project="project1">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/600x400/?app" alt="Mobile App">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4>Fitness App</h4>
+                                <p>Mobile Development</p>
+                                <button class="portfolio-btn" data-project="project2">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/600x400/?design" alt="UI Design">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4>Brand Identity</h4>
+                                <p>UI/UX Design</p>
+                                <button class="portfolio-btn" data-project="project3">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/600x400/?webapp" alt="Web App">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4>Dashboard Interface</h4>
+                                <p>Web Development</p>
+                                <button class="portfolio-btn" data-project="project4">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/600x400/?ux" alt="UX Design">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4>Mobile App Interface</h4>
+                                <p>UI/UX Design</p>
+                                <button class="portfolio-btn" data-project="project5">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-img">
+                        <img src="https://source.unsplash.com/random/600x400/?mobile" alt="Mobile App">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4>Food Delivery App</h4>
+                                <p>Mobile Development</p>
+                                <button class="portfolio-btn" data-project="project6">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <p>Insights and updates from our team</p>
+            </div>
+            
+            <div class="blog-container">
+                <div class="blog-card" data-aos="fade-up">
+                    <div class="blog-img">
+                        <img src="https://source.unsplash.com/random/600x400/?technology" alt="Tech Blog">
+                        <div class="blog-date">
+                            <span class="day">15</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Admin</span>
+                            <span><i class="fas fa-folder"></i> Technology</span>
+                            <span><i class="fas fa-comments"></i> 12</span>
+                        </div>
+                        <h3>The Future of Web Development</h3>
+                        <p>Exploring emerging trends and technologies shaping the future of web development in 2023 and beyond.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-img">
+                        <img src="https://source.unsplash.com/random/600x400/?design" alt="Design Blog">
+                        <div class="blog-date">
+                            <span class="day">22</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Sarah</span>
+                            <span><i class="fas fa-folder"></i> Design</span>
+                            <span><i class="fas fa-comments"></i> 8</span>
+                        </div>
+                        <h3>UX Design Principles Every Designer Should Know</h3>
+                        <p>Essential user experience design principles that lead to better products and happier users.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-img">
+                        <img src="https://source.unsplash.com/random/600x400/?code" alt="Code Blog">
+                        <div class="blog-date">
+                            <span class="day">30</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> John</span>
+                            <span><i class="fas fa-folder"></i> Development</span>
+                            <span><i class="fas fa-comments"></i> 15</span>
+                        </div>
+                        <h3>Optimizing Website Performance</h3>
+                        <p>Practical tips and techniques to improve website loading speed and overall performance.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-newsletter">
+                <div class="newsletter-content">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with our latest articles and news</p>
+                    <form id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Fill out the form or contact us directly using the information below</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p>123 Web Street, Digital City, Internet 10011</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+1 (123) 456-7890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>info@advancedweb.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="error-message" id="name-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                                <small>Format: 123-456-7890</small>
+                                <div class="error-message" id="phone-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="quote">Request a Quote</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="error-message" id="subject-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">I agree to the privacy policy and terms of service</label>
+                                <div class="error-message" id="consent-error"></div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25986548248684!3d40.69714941887458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1627309750687!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 My Simple Website. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <h3>Advanced<span>Web</span></h3>
+                </div>
+                <p>We create beautiful, functional websites and applications that help businesses grow.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Mobile Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">SEO Services</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Web Street, Digital City</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@advancedweb.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am - 6pm</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Advanced Web Project. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Modal Popups -->
+    <div class="modal" id="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h3 id="modal-title">Service Details</h3>
+                <div id="modal-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="portfolio-modal">
+        <div class="modal-content large">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h3 id="portfolio-title">Project Details</h3>
+                <div id="portfolio-content" class="portfolio-details">
+                    <!-- Content will be dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="success-modal">
+        <div class="modal-content small">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body text-center">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Success!</h3>
+                <p id="success-message">Your message has been sent successfully.</p>
+                <button class="modal-btn" id="success-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 
